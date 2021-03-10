@@ -22,13 +22,13 @@ public class Main {
 			c.withdraw(200);
 			
 			c.transfer(100, account2);
-			 catch (IllegalTransferException | InsufficientFundsException e) {
+		}catch ( InsufficientFundsException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (InsufficientFundsException e) {
-			// TODO Auto-generated catch block
 			System.err.println(e.getMessage());
+			}
+		catch (IllegalTransferException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		System.out.println("suma disponibila:" + c.getBalance());
