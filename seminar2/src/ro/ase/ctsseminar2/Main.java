@@ -11,6 +11,7 @@ public class Main {
 		CurrentAccount c=new CurrentAccount(300,"IBAN1");
 		CurrentAccount account2=new CurrentAccount(200,"IBAN2");
 		
+		SavingsAccount account3=new SavingsAccount(300,"IBAN3");
 		
 		System.out.println("suma disponibila:" + c.getBalance());
 		System.out.println("creditul max pt contul curent este" + CurrentAccount.MAX_CREDIT);
@@ -31,8 +32,12 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		System.out.println("suma disponibila:" + c.getBalance());
-		System.out.println("suma in contul 2 este" +account2.getBalance());
+		System.out.println("suma disponibila: " + c.getBalance());
+		System.out.println("suma in contul 2 este " +account2.getBalance());
+		account3.addInterest(10);
+		System.out.println("suma in contul 3 este " +account3.getBalance());
+		Bank banca=new Bank();
+		BankAccount account4=banca.openBankAccount(AccountType.CURRENT);
 		
 	}
 
