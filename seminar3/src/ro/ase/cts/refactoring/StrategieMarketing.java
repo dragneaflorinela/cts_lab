@@ -35,7 +35,7 @@ public class StrategieMarketing {
 			pretFinal=aplicaDiscount(pretInitial, discount, DISCOUNT_EXTRA_35);
 			break;
 		default:
-			throw new UnsupportedOperationException("categorie produs neidentificata")
+			throw new UnsupportedOperationException("categorie produs neidentificata");
 	
 		}
 		
