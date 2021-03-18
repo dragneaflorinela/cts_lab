@@ -3,12 +3,14 @@ package ro.ase.ctsseminar2;
 import ro.ase.ctsseminar2.exceptii.IllegalTransferException;
 import ro.ase.ctsseminar2.exceptii.InsufficientFundsException;
 import ro.ase.ctsseminar2.interfaces.Transferable;
+import ro.ase.ctsseminar2.Depositable;
+import ro.ase.ctsseminar2.interfaces.NotificationService;
 
 public class CurrentAccount extends BankAccount implements Depositable, Withdrawable, Transferable {
 
 	
 	public static double MAX_CREDIT=5000;
-	public NotificationSerive notificationService;
+	public NotificationService notificationService;
 	
 	public CurrentAccount() {
 		super();
@@ -23,11 +25,11 @@ public class CurrentAccount extends BankAccount implements Depositable, Withdraw
 	
 	
 
-	public NotificationSerive getNotificationService() {
+	public NotificationService getNotificationService() {
 		return notificationService;
 	}
 
-	public void setNotificationService(NotificationSerive notificationService) {
+	public void setNotificationService(NotificationService notificationService) {
 		this.notificationService = notificationService;
 	}
 

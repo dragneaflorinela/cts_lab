@@ -4,7 +4,9 @@ import ro.ase.ctsseminar2.exceptii.IllegalTransferException;
 import ro.ase.ctsseminar2.exceptii.InsufficientFundsException;
 import ro.ase.ctsseminar2.interfaces.NotificationService;
 import ro.ase.ctsseminar2.interfaces.Profitable;
-
+import ro.ase.ctsseminar2.exceptii.InsufficientFundsException;
+import ro.ase.ctsseminar2.interfaces.NotificationService;
+import ro.ase.ctsseminar2.interfaces.Profitable;
 public class Main {
 
 	public static void main(String[] args) {
