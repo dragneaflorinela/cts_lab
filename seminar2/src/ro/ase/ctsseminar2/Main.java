@@ -12,7 +12,7 @@ public class Main {
 		
 		CurrentAccount c=new CurrentAccount(300,"IBAN1");
 		CurrentAccount  account2=new CurrentAccount(200,"IBAN2");
-		c.setNotificationSerive(new SMSNotificationSerive());
+		c.setNotificationService(new SMSNotificationSerive());
 		SavingsAccount account3=new SavingsAccount(300,"IBAN3");
 		
 		System.out.println("suma disponibila:" + c.getBalance());
@@ -23,9 +23,9 @@ public class Main {
 		
 		try {
 			c.withdraw(200);
-			c.setNotificationSerive(new EmailNotificationService());
+			c.setNotificationService(new EmailNotificationService());
 			c.withdraw(200);
-			c.setNotificationSerive(new NotificationService() {
+			c.setNotificationService(new NotificationService() {
 				
 				@Override
 				public void sendNotification(String message) {
