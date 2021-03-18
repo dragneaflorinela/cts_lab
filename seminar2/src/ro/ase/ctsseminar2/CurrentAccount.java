@@ -2,11 +2,13 @@ package ro.ase.ctsseminar2;
 
 import ro.ase.ctsseminar2.exceptii.IllegalTransferException;
 import ro.ase.ctsseminar2.exceptii.InsufficientFundsException;
+import ro.ase.ctsseminar2.interfaces.Transferable;
 
-public class CurrentAccount extends BankAccount {
+public class CurrentAccount extends BankAccount implements Depositable, Withdrawable, Transferable {
 
 	
 	public static double MAX_CREDIT=5000;
+	public NotificationSerive notificationService;
 	
 	public CurrentAccount() {
 		super();
@@ -18,6 +20,16 @@ public class CurrentAccount extends BankAccount {
 		
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public NotificationSerive getNotificationService() {
+		return notificationService;
+	}
+
+	public void setNotificationService(NotificationSerive notificationService) {
+		this.notificationService = notificationService;
+	}
 
 	@Override
 	public void deposit(double amount) {
@@ -25,7 +37,10 @@ public class CurrentAccount extends BankAccount {
 		
 		this.balance +=amount;
 		
+		
 	}
+	
+	
 
 	@Override
 	public void withdraw(double amount) throws InsufficientFundsException {
@@ -36,11 +51,15 @@ public class CurrentAccount extends BankAccount {
 		else {
 			throw new InsufficientFundsException("fonduri insuficiente");
 		}
+		if(this.notificationService != null) {
+			this.notificationService.sendNotification("s a extras suma " + amount);
+		}
+		
 		
 	}
 
 	@Override
-	public void transfer(double amount, Account destination) throws IllegalTransferException, InsufficientFundsException{
+	public void transfer(double amount, Depositable destination) throws IllegalTransferException, InsufficientFundsException{
 		// TODO Auto-generated method stub
 		if(((BankAccount)destination).iban.equals(this.iban)) {
 			throw new IllegalTransferException("conturile coincid");
@@ -52,12 +71,6 @@ public class CurrentAccount extends BankAccount {
 		
 	}
 
-	
-
-	
-
-	
-	
-	
+		
 
 }
