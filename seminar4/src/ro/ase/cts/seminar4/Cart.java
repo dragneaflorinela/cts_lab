@@ -10,7 +10,7 @@ public class Cart  implements Serializable{
 	//private static Cart instance = null;
 	private static Map<String,Cart> instances = null;
 	private String type;
-	public ArrayList<String> products;
+	public ArrayList<Product> products;
 	
 	private Cart() {
 		
@@ -31,7 +31,7 @@ public class Cart  implements Serializable{
 		return instances.get(type);
 	}
 	
-	public ArrayList<String>getProducts(){
+	public ArrayList<Product>getProducts(){
 		return products;
 	}
 }
