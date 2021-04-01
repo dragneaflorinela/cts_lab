@@ -19,21 +19,20 @@ public class Main {
 		String userPreference = scan.nextLine();
 		Product myProduct = null;
 		
-		AbstractProductFactory productFactory=null;
-		if(userPreference !=null) {
-			if(userPreference.equalsIgnoreCase("tech")) {
-				productFactory=new TechProductFactory();
+		AbstractProductFactory productFactory = null;
+		if(userPreference != null) {
+			if (userPreference.equalsIgnoreCase("tech")) {
+				productFactory = new TechProductFactory();
 			}
 		}
 		System.out.println(productFactory.getCatalog());
-		myProduct = productFactory.makeProduct();
-		userPreference=scan.nextLine();
+		userPreference = scan.nextLine();
 		try {
-			int selectedid=Integer.valueOf(userPreference);
+			int selectedId = Integer.valueOf(userPreference);
 			myProduct = productFactory.makeProduct(selectedId);
+		} catch (NumberFormatException e) {
+			System.err.println("Selectie invalida.");
 		}
-		
-		int selectedid=Integer.valueOf(userPreference);
 		
 		if(myProduct != null) {
 			myShoppingCart.products.add(myProduct);

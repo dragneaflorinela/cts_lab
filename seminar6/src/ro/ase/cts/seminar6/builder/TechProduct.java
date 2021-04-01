@@ -49,7 +49,7 @@ public class TechProduct implements Product{
 	public static class TechProductBuilder{
 		private TechProduct product;
 		
-		public TechProductBuilder() {
+		public TechProductBuilder(int id) {
 			product=new TechProduct();
 		}
 		public TechProductBuilder setName(String name) {
@@ -68,6 +68,14 @@ public class TechProduct implements Product{
 		public TechProductBuilder setDisplayType(String displayType) {
 			product.displayType=displayType;
 			return this;
+		}
+		public TechProductBuilder setPrice(float price) {
+			product.price = price;
+			return this;
+		}
+		
+		public TechProduct getProduct() {
+			return product;
 		}
 	}
 }
