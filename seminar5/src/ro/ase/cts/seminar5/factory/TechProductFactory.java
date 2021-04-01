@@ -1,13 +1,5 @@
 package ro.ase.cts.seminar5.factory;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-
 public class TechProductFactory extends AbstractProductFactory{
 
 	@Override
@@ -17,40 +9,9 @@ public class TechProductFactory extends AbstractProductFactory{
 
 	@Override
 	public String getCatalog() {
-		ArrayList<String>records=readRecordsFromFile("tech_products.csv");
-		StringBuilder builder=new StringBuilder();
-		for(String record: records) {
-			String[] productAttributes =record.split(",");
-			builder.append(productAttributes[0]);
-			builder.append(productAttributes[1]+ " ").append(productAttributes[2]+ " ").append(productAttributes[3]+ "\n");
-			
-		}
-		return builder.toString();
-	}
-	
-	
-	private ArrayList<String>readRecordsFromFile(String fileName){
-		ArrayList<String>records= new ArrayList<String>();
-		
-		URL fileURL=getClass().getResource(fileName);
-		File productsFile=new File(fileURL.getPath());
-		try {
-			BufferedReader reader=new BufferedReader(new FileReader(productsFile));
-			String line;
-			while((line=reader.readLine()) != null) {
-				records.add(line);
-			
-			}
-			reader.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return records;
+		return "generic - Generic tech product";
 	}
 
+	
 }
+
