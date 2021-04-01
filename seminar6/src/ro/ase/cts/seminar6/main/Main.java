@@ -25,9 +25,15 @@ public class Main {
 				productFactory=new TechProductFactory();
 			}
 		}
+		System.out.println(productFactory.getCatalog());
 		myProduct = productFactory.makeProduct();
+		userPreference=scan.nextLine();
+		try {
+			int selectedid=Integer.valueOf(userPreference);
+			myProduct = productFactory.makeProduct(selectedId);
+		}
 		
-
+		int selectedid=Integer.valueOf(userPreference);
 		
 		if(myProduct != null) {
 			myShoppingCart.products.add(myProduct);

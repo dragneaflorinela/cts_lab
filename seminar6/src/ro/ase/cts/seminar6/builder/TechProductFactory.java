@@ -3,8 +3,8 @@ package ro.ase.cts.seminar6.builder;
 public class TechProductFactory extends AbstractProductFactory{
 
 	@Override
-	public Product makeProduct() throws UnsupportedOperationException {
-		return new TechProduct("generic");
+	public Product makeProduct(int id) throws UnsupportedOperationException {
+		return new TechProduct.TechProductBuilder(id).getProduct();
 	}
 
 	@Override
