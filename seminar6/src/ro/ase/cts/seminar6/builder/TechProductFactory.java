@@ -43,7 +43,13 @@ public class TechProductFactory extends AbstractProductFactory{
 
 	private ArrayList<String> readRecordsFromFile(String fileName){
 		ArrayList<String> records = new ArrayList<String>();
-		
+		System.out.println("reading product records...");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		URL fileUrl = getClass().getResource(fileName);
 		File productsFile = new File(fileUrl.getPath());
 		try {
@@ -60,7 +66,7 @@ public class TechProductFactory extends AbstractProductFactory{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		System.out.println("finished fetching records");
 		return records;
 	}
 }
