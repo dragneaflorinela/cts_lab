@@ -1,4 +1,4 @@
-package ro.ase.ctss.seminar8.composite;
+package ro.ase.cts.seminar8.composite;
 
 import java.util.ArrayList;
 

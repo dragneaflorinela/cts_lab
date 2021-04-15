@@ -1,4 +1,4 @@
-package ro.ase.ctss.seminar8.Decorator;
+package ro.ase.cts.seminar8.Decorator;
 
 public class WithLaptopDecorator extends AbstractBackpackDecorator{
 

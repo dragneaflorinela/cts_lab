@@ -1,13 +1,13 @@
-package ro.ase.ctss.seminar8;
+package ro.ase.cts.seminar8;
 
+import ro.ase.cts.seminar8.Decorator.AbstractBackpack;
+import ro.ase.cts.seminar8.Decorator.Backpack;
+import ro.ase.cts.seminar8.Decorator.WithFoodDecorator;
+import ro.ase.cts.seminar8.Decorator.WithLaptopDecorator;
+import ro.ase.cts.seminar8.composite.CatalogComponent;
+import ro.ase.cts.seminar8.composite.Product;
+import ro.ase.cts.seminar8.composite.ProductCatalog;
 import ro.ase.cts.seminar8.facade.OrderFacade;
-import ro.ase.ctss.seminar8.Decorator.AbstractBackpack;
-import ro.ase.ctss.seminar8.Decorator.Backpack;
-import ro.ase.ctss.seminar8.Decorator.WithFoodDecorator;
-import ro.ase.ctss.seminar8.Decorator.WithLaptopDecorator;
-import ro.ase.ctss.seminar8.composite.CatalogComponent;
-import ro.ase.ctss.seminar8.composite.Product;
-import ro.ase.ctss.seminar8.composite.ProductCatalog;
 
 public class Main {
 

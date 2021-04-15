@@ -1,4 +1,4 @@
-package ro.ase.ctss.seminar8.composite;
+package ro.ase.cts.seminar8.composite;
 
 public class Product extends CatalogComponent {
 	String name;
