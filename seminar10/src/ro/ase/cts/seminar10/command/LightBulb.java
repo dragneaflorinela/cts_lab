@@ -21,7 +21,7 @@ public class LightBulb {
 	}
 	}
 	
-	public void increaseLight() {
+	public void increaseLightIntensity() {
 		System.out.println("increasing light");
 		lightIntensity++;
 	}
