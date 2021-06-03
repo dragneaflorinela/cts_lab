@@ -17,6 +17,19 @@ public class DepartamentSecretariat {
 
 	
 	float calculBursa(int studentIndex) {
+		float mediestudent;
+		try {
+			mediestudent = studenti.get(studentIndex).calculMedie();
+		} catch (StudentExceptionWrongValue e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(mediestudent>9) {
+			return TipBursaEnum.EXCELENTA.getCuantum();
+		}else if(mediestudent>8) {
+			return TipBursaEnum.MERIT.getCuantum();
+		}
+				
 		return 0;
 	}
 	
